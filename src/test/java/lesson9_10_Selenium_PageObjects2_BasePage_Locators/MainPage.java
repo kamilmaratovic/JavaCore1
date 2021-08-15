@@ -1,20 +1,16 @@
-package lesson8_PageObjects;
+package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.util.List;
 
-public class MainPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class MainPage extends BasePage{
 
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, 10, 100);
+        super(driver);
     }
 
     public boolean isOpen() {

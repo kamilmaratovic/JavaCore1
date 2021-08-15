@@ -1,34 +1,16 @@
-package lesson8_PageObjectTests;
+package lesson9_10_Selenium_PageObjectTests2_BaseTest;
 
-import com.github.javafaker.Faker;
 import helpers.TestObjectGenerator;
 import lesson8_PageObjects.LoginPage;
 import lesson8_PageObjects.MainPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class PlaylistTest {
-    WebDriver driver;
-    Faker faker;
-    @BeforeMethod
-    public void startUp() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
-        this.driver = new ChromeDriver();
-        this.faker = new Faker();
-    }
+public class PlaylistTest extends BaseTest{
 
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-    }
     @Test
     public void playlistTest_createPlayList_playlistCreated(){
-        String playlistName = "ZZZ";
+        String playlistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login("koeluser06@testpro.io", "te$t$tudent");

@@ -1,17 +1,14 @@
-package lesson8_PageObjects;
+package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
-import lesson9_10_Selenium_PageObjects2_BasePage_Locators.LoginPageLocators;
+import lesson8_PageObjects.MainPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class LoginPage extends BasePage{
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait =new WebDriverWait (driver, 10, 100);
+        super(driver);
     }
 
     private WebElement getEmailField(){
@@ -30,7 +27,7 @@ public class LoginPage {
 
 
 
-    public MainPage login (String username, String password){
+    public lesson8_PageObjects.MainPage login (String username, String password){
         driver.get("https://bbb.testpro.io/");
         getEmailField().sendKeys(username);
         getPasswordField().sendKeys(password);

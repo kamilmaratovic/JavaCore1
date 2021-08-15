@@ -1,4 +1,4 @@
-package lesson9_Selenium_PageObjects2_Locators;
+package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
 import org.openqa.selenium.By;
 
