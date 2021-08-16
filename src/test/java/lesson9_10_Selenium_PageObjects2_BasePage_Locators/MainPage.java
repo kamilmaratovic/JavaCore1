@@ -24,9 +24,9 @@ public class MainPage extends BasePage{
     }
 
     public void clickPlusButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'fa-plus-circle')]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class,'fa-plus-circle')]")));
         ;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             try {
                 driver.findElement(By.xpath("//*[contains(@class,'fa-plus-circle')]")).click();
                 break;
@@ -38,7 +38,7 @@ public class MainPage extends BasePage{
     }
 
     public void clickNewPlaylistField() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             try {
                 driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
                 break;
@@ -50,7 +50,7 @@ public class MainPage extends BasePage{
     }
 
     public WebElement getPlaylistNameField() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             try {
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@placeholder, 'to save')]")));
             } catch (TimeoutException | ElementNotInteractableException ignored) {
@@ -82,7 +82,7 @@ public class MainPage extends BasePage{
         WebElement myPlaylist = driver.findElement(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", myPlaylist);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             try {
                 action.doubleClick(myPlaylist).perform();
                 wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[contains(@class, 'playlist editing')]/input"))));
@@ -98,7 +98,7 @@ public class MainPage extends BasePage{
 
     public boolean isNewPlaylistExist(String playlistId, String newPlaylistName) {
         List<WebElement> playlists = driver.findElements(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             try {
                 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@href='#!/playlist/" + playlistId + "']")));
 
