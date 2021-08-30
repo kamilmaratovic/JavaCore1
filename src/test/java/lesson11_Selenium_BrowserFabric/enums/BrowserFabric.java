@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.Test;
 //import org.seleniumhq.selenium.opera.OperaDriver;
 
@@ -28,13 +29,13 @@ public class BrowserFabric {
     }
 
     private static WebDriver getOperaDriver() {
+        OperaOptions options = new OperaOptions();
         System.setProperty("webdriver.opera.driver", "operadriver");
-        return new OperaDriver();
+        return new OperaDriver(options);
     }
 
     private static WebDriver getEdgeDriver() {
         EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless");
         System.setProperty("webdriver.edge.driver", "msedgedriver");
         return new EdgeDriver(options);
     }
@@ -50,7 +51,7 @@ public class BrowserFabric {
 
     private static WebDriver getChromeDriver() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("window-size=1400,1000");
+//        options.addArguments("window-size=1400,1000");
         options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "chromedriver");
        return new ChromeDriver(options);

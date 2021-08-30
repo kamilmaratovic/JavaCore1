@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite" parallel="classes" thread-count="4">
+    <parameter name="email" value="koeluser06@testpro.io"/>
+    <parameter name="password" value="te$t$tudent"/>
+    <parameter name="wrongPassword" value="te$t$tudent1"/>
+<test name="AllTests">
+    <classes>
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest">
+            <methods>
+                <include name="loginTest_correctCredentials"/>
+                <include name="loginTest_wrongCridentials"/>
+                <include name="loginTest_correctCredentials1"/>
+                <include name="loginTest_wrongCridentials1"/>
+                <include name="loginTest_correctCredentials2"/>
+                <include name="loginTest_wrongCridentials2"/>
+            </methods>
+        </class>
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest_A">
+            <methods>
+                <include name="loginTest_correctCredentialsA"/>
+                <include name="loginTest_wrongCridentialsA"/>
+                <include name="loginTest_correctCredentials1A"/>
+                <include name="loginTest_wrongCridentials1A"/>
+                <include name="loginTest_correctCredentials2A"/>
+                <include name="loginTest_wrongCridentials2A"/>
+            </methods>
+        </class>
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest">
+            <methods>
+                <include name="playlistTest_createPlayList_playlistCreated"/>
+                <include name="playlistTest_renamePlaylist_playlistRenamed"/>
+                <include name="playlistTest_deletePlaylists_playlistDeleted"/>
+                <include name="songTest_addSongToFavorites_songAdded"/>
+                <exclude name="playlistTest_createPlayList_playlistCreated1"/>
+                <include name="playlistTest_renamePlaylist_playlistRenamed1"/>
+                <include name="playlistTest_deletePlaylists_playlistDeleted1"/>
+                <include name="songTest_addSongToFavorites_songAdded1"/>
+
+            </methods>
+        </class>
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest_A">
+            <methods>
+                <include name="playlistTest_createPlayList_playlistCreatedA"/>
+                <include name="playlistTest_renamePlaylist_playlistRenamedA"/>
+                <include name="playlistTest_deletePlaylists_playlistDeletedA"/>
+                <include name="songTest_addSongToFavorites_songAddedA"/>
+                <exclude name="playlistTest_createPlayList_playlistCreated1A"/>
+                <include name="playlistTest_renamePlaylist_playlistRenamed1A"/>
+                <include name="playlistTest_deletePlaylists_playlistDeleted1A"/>
+                <include name="songTest_addSongToFavorites_songAdded1A"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>

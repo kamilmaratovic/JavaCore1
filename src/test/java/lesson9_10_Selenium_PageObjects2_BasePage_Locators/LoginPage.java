@@ -1,9 +1,7 @@
 package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
-import lesson8_PageObjects.MainPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage{
 
@@ -27,7 +25,7 @@ public class LoginPage extends BasePage{
 
 
 
-    public lesson8_PageObjects.MainPage login (String username, String password){
+    public MainPage login (String username, String password){
         driver.get("https://bbb.testpro.io/");
         getEmailField().sendKeys(username);
         getPasswordField().sendKeys(password);

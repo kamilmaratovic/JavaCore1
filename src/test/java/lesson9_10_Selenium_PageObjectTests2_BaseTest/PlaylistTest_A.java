@@ -1,16 +1,15 @@
 package lesson9_10_Selenium_PageObjectTests2_BaseTest;
 
 import helpers.TestObjectGenerator;
-import lesson9_10_Selenium_PageObjects2_BasePage_Locators.MainPage;
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.LoginPage;
+import lesson9_10_Selenium_PageObjects2_BasePage_Locators.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.ui.Select;
 
-public class PlaylistTest extends BaseTest{
+public class PlaylistTest_A extends BaseTest{
 
     @Test
-    public void playlistTest_createPlayList_playlistCreated(){
+    public void playlistTest_createPlayList_playlistCreatedA(){
         String playlistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
@@ -22,7 +21,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void playlistTest_renamePlaylist_playlistRenamed() {
+    public void playlistTest_renamePlaylist_playlistRenamedA() {
         String playlistName = TestObjectGenerator.randomString(8);
         String newPlaylistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
@@ -35,7 +34,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void playlistTest_deletePlaylists_playlistDeleted() {
+    public void playlistTest_deletePlaylists_playlistDeletedA() {
         String playlistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
@@ -55,7 +54,7 @@ public class PlaylistTest extends BaseTest{
 //        mainPage.addSongs(playlistName);
 //    }
     @Test
-    public void songTest_addSongToFavorites_songAdded() throws InterruptedException {
+    public void songTest_addSongToFavorites_songAddedA() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -64,7 +63,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void playlistTest_createPlayList_playlistCreated1(){
+    public void playlistTest_createPlayList_playlistCreated1A(){
         String playlistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
@@ -76,7 +75,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void playlistTest_renamePlaylist_playlistRenamed1() {
+    public void playlistTest_renamePlaylist_playlistRenamed1A() {
         String playlistName = TestObjectGenerator.randomString(8);
         String newPlaylistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
@@ -89,7 +88,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void playlistTest_deletePlaylists_playlistDeleted1() {
+    public void playlistTest_deletePlaylists_playlistDeleted1A() {
         String playlistName = faker.funnyName().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
@@ -100,7 +99,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void songTest_addSongToFavorites_songAdded1() {
+    public void songTest_addSongToFavorites_songAdded1A() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
