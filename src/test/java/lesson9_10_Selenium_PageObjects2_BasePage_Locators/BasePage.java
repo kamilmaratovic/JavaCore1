@@ -16,7 +16,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait =new WebDriverWait (driver, 50, 30);
+        this.wait =new WebDriverWait (driver, 20);
         this.fluentWait = new FluentWait<>(driver)
                 .ignoring(NoSuchElementException.class)
                 .ignoring (StaleElementReferenceException.class)

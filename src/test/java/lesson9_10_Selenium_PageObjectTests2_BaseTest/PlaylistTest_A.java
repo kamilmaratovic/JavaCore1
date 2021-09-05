@@ -1,6 +1,6 @@
 package lesson9_10_Selenium_PageObjectTests2_BaseTest;
 
-import helpers.TestObjectGenerator;
+import z_helpers.TestObjectGenerator;
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.LoginPage;
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.MainPage;
 import org.testng.Assert;
@@ -22,8 +22,8 @@ public class PlaylistTest_A extends BaseTest{
 
     @Test
     public void playlistTest_renamePlaylist_playlistRenamedA() {
-        String playlistName = TestObjectGenerator.randomString(8);
-        String newPlaylistName = faker.funnyName().name();
+        String playlistName = TestObjectGenerator.randomString(11);
+        String newPlaylistName = faker.animal().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -54,7 +54,7 @@ public class PlaylistTest_A extends BaseTest{
 //        mainPage.addSongs(playlistName);
 //    }
     @Test
-    public void songTest_addSongToFavorites_songAddedA() {
+    public void songTest_addSongToFavorites_songAddedA() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -77,7 +77,7 @@ public class PlaylistTest_A extends BaseTest{
     @Test
     public void playlistTest_renamePlaylist_playlistRenamed1A() {
         String playlistName = TestObjectGenerator.randomString(8);
-        String newPlaylistName = faker.funnyName().name();
+        String newPlaylistName = faker.animal().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -99,7 +99,7 @@ public class PlaylistTest_A extends BaseTest{
     }
 
     @Test
-    public void songTest_addSongToFavorites_songAdded1A() {
+    public void songTest_addSongToFavorites_songAdded1A() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);

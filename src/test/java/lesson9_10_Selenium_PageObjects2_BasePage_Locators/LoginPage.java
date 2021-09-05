@@ -1,6 +1,7 @@
 package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage{
@@ -25,11 +26,14 @@ public class LoginPage extends BasePage{
 
 
 
-    public MainPage login (String username, String password){
+    public MainPage login (String username, String password) {
         driver.get("https://bbb.testpro.io/");
         getEmailField().sendKeys(username);
         getPasswordField().sendKeys(password);
-        getLoginButton().click();
+        wait.until(ExpectedConditions.elementToBeClickable(getLoginButton()));
+        for(int i=0;i<3;i++){
+            getLoginButton().click();
+        }
         return new MainPage(driver);
     }
 
@@ -43,6 +47,7 @@ public class LoginPage extends BasePage{
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("error")));
         } catch (NoSuchElementException | TimeoutException ignored){};
 
-        return driver.findElements(By.className("error")).size()==1;
+        return driver.findElements(By.className("error")).size()==0;
+//        return driver.findElements(By.xpath("//*[@class='home active']")).size() == 0;
     }
 }

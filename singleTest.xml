@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite" parallel="classes" thread-count="1">
+    <listeners>
+        <listener class-name="listeners.Listeners"></listener>
+    </listeners>
+    <parameter name="email" value="koeluser06@testpro.io"/>
+    <parameter name="password" value="te$t$tudent"/>
+    <parameter name="wrongPassword" value="te$t$tudent1"/>
+<test name="AllTests">
+    <classes>
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest">
+            <methods>
+                <include name="loginTest_correctCredentials1"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>

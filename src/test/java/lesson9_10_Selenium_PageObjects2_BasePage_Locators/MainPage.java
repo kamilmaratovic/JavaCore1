@@ -26,10 +26,11 @@ public class MainPage extends BasePage{
     }
 
     public void clickPlusButton() {
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'fa-plus-circle')]")));
+
         Actions actions = new Actions(driver);
-        for (int p = 0; p < 10; p++) {
+        for (int p = 0; p < 50; p++) {
             try {
+//                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'fa-plus-circle')]")));
                 WebElement plusButton = driver.findElement(By.xpath("//*[contains(@class,'fa-plus-circle')]"));
                 actions.moveToElement(plusButton).perform();
                 actions.click(plusButton).perform();
@@ -41,24 +42,23 @@ public class MainPage extends BasePage{
     }
 
     public void clickNewPlaylistField() {
-        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < 50; i++) {
             try {
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='New Playlist']")));
                 driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
-                break;
-            } catch (NoSuchElementException | ElementClickInterceptedException | TimeoutException ignored) {
+//                break;
+            } catch (NoSuchElementException | ElementNotInteractableException | TimeoutException ignored) {
             }
             ;
 
         }
-    }
+//    }
 
     public WebElement getPlaylistNameField() {
-        for (int i = 0; i < 10; i++) {
+        for (int r = 0; r < 40; r++) {
             try {
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@placeholder, 'to save')]")));
-            } catch (TimeoutException | ElementNotInteractableException ignored) {
-            }
-            ;
+            } catch (TimeoutException | ElementNotInteractableException | NoSuchElementException ignored) {};
         }
         return driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"));
     }
@@ -84,12 +84,13 @@ public class MainPage extends BasePage{
         Actions action = new Actions(driver);
         WebElement myPlaylist = driver.findElement(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", myPlaylist);
+        wait.until(ExpectedConditions.visibilityOf(myPlaylist));
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             try {
                 action.doubleClick(myPlaylist).perform();
                 wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[contains(@class, 'playlist editing')]/input"))));
-                action.doubleClick(driver.findElement(By.xpath("//*[contains(@class, 'playlist editing')]"))).perform();
+                action.doubleClick(driver.findElement(By.xpath("//*[contains(@class, 'playlist editing')]/input"))).perform();
                 action.sendKeys(newPlaylistName, Keys.ENTER).perform();
 
                 break;
@@ -101,7 +102,7 @@ public class MainPage extends BasePage{
 
     public boolean isNewPlaylistExist(String playlistId, String newPlaylistName) {
         List<WebElement> playlists = driver.findElements(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             try {
 
                 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@href='#!/playlist/" + playlistId + "']")));
@@ -121,18 +122,20 @@ public class MainPage extends BasePage{
         WebElement playlist = driver.findElement(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
         WebElement deleteButton = driver.findElement(By.xpath("//*[@class='active']/following-sibling::*/ul/li[2]"));
 
-        try {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", playlist);
-            actions.contextClick(playlist).perform();
-            wait.until(ExpectedConditions.visibilityOf(deleteButton));
-            actions.moveToElement(deleteButton).perform();
-            deleteButton.click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'success')]")));
-            Thread.sleep(1000);
+        for(int e=0; e<10;e++) {
+            try {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", playlist);
+                actions.contextClick(playlist).perform();
+                wait.until(ExpectedConditions.visibilityOf(deleteButton));
+                actions.moveToElement(deleteButton).perform();
+                deleteButton.click();
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'success')]")));
+                Thread.sleep(1000);
 
-        } catch (StaleElementReferenceException | NoSuchElementException | ElementNotInteractableException | InterruptedException ignored) {
+            } catch (StaleElementReferenceException | NoSuchElementException | ElementNotInteractableException | InterruptedException ignored) {
+            }
+            ;
         }
-        ;
 
 
     }
@@ -162,7 +165,7 @@ public class MainPage extends BasePage{
 //                return names1.containsAll();
 //            }
 
-    public boolean addSongToFavorites() {
+    public boolean addSongToFavorites() throws InterruptedException {
         Actions actions = new Actions(driver);
         for (int i = 0; i < 50; i++) {
             try {
@@ -170,34 +173,44 @@ public class MainPage extends BasePage{
                 actions.moveToElement(allSongs).perform();
                 allSongs.click();
                 break;
-            } catch (NoSuchElementException ignored) {
+            } catch (NoSuchElementException | ElementClickInterceptedException ignored) {
             }
             ;
         }
         List<WebElement> songRows = driver.findElements(By.xpath("//*[contains(@class, 'wrap all-songs')]/div[1]/div[1]/table[1]/tr/td[2]"));
+        try{
+        for (int i = 0; i < 10; i++) {
 
-        for (int g = 0; g < 10; g++) {
-            String name = songRows.get(g).getText();
-            names1.add(name);
-        }
-        for (int l = 0; l < 10; l++) {
-            actions.doubleClick(songRows.get(l)).perform();
-            for (int a = 0; a < 50; a++) {
-                try {
-                    WebElement likeButton = driver.findElement(By.xpath("//*[@title='Like current song']"));
-                    actions.moveToElement(likeButton).perform();
-                    likeButton.click();
-                } catch (NoSuchElementException ignored) {
+                String name = songRows.get(i).getText();
+                names1.add(name);
+
+        }}catch (IndexOutOfBoundsException ignored){};
+        try {
+            for (int l = 0; l < 10; l++) {
+
+                actions.doubleClick(songRows.get(l)).perform();
+
+
+                for (int a = 0; a < 50; a++) {
+                    try {
+                        WebElement likeButton = driver.findElement(By.xpath("//*[@title='Like current song']"));
+                        actions.moveToElement(likeButton).perform();
+                        likeButton.click();
+                    } catch (NoSuchElementException ignored) {
+                    }
+                    ;
                 }
-                ;
             }
-        }
+        }catch (IndexOutOfBoundsException ignored){};
         WebElement favorites = driver.findElement(By.xpath("//*[@href='#!/favorites']"));
+        wait.until(ExpectedConditions.elementToBeClickable(favorites));
         favorites.click();
         List<WebElement> favoriteSongs = driver.findElements(By.xpath("//*[contains(@class,'scroll-wrap favorites')]/div[1]/div[1]/table[1]/tr/td[2]"));
         for (int y = 0; y < 10; y++) {
-            String name = favoriteSongs.get(y).getText();
-            names2.add(name);
+
+                String name = favoriteSongs.get(y).getText();
+                names2.add(name);
+
         }
 
         return names2.containsAll(names1) && favoriteSongs.size() == 10;

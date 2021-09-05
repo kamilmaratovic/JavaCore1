@@ -1,7 +1,7 @@
 package lesson8_PageObjectTests;
 
 import com.github.javafaker.Faker;
-import helpers.TestObjectGenerator;
+import z_helpers.TestObjectGenerator;
 import lesson8_PageObjects.LoginPage;
 import lesson8_PageObjects.MainPage;
 import org.openqa.selenium.WebDriver;

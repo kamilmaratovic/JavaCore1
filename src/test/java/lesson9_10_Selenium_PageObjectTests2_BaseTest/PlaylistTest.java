@@ -1,17 +1,16 @@
 package lesson9_10_Selenium_PageObjectTests2_BaseTest;
 
-import helpers.TestObjectGenerator;
+import z_helpers.TestObjectGenerator;
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.MainPage;
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.ui.Select;
 
 public class PlaylistTest extends BaseTest{
 
     @Test
     public void playlistTest_createPlayList_playlistCreated(){
-        String playlistName = faker.funnyName().name();
+        String playlistName = TestObjectGenerator.randomString(12);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -23,8 +22,8 @@ public class PlaylistTest extends BaseTest{
 
     @Test
     public void playlistTest_renamePlaylist_playlistRenamed() {
-        String playlistName = TestObjectGenerator.randomString(8);
-        String newPlaylistName = faker.funnyName().name();
+        String playlistName = TestObjectGenerator.randomString(10);
+        String newPlaylistName = faker.animal().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -77,8 +76,8 @@ public class PlaylistTest extends BaseTest{
 
     @Test
     public void playlistTest_renamePlaylist_playlistRenamed1() {
-        String playlistName = TestObjectGenerator.randomString(8);
-        String newPlaylistName = faker.funnyName().name();
+        String playlistName = TestObjectGenerator.randomString(9);
+        String newPlaylistName = faker.animal().name();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);
@@ -100,7 +99,7 @@ public class PlaylistTest extends BaseTest{
     }
 
     @Test
-    public void songTest_addSongToFavorites_songAdded1() {
+    public void songTest_addSongToFavorites_songAdded1() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.login(username, password);

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="classes" name="Failed suite [MasterSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="wrongPassword" value="te$t$tudent1"/>
+  <parameter name="password" value="te$t$tudent"/>
+  <parameter name="email" value="koeluser06@testpro.io"/>
+  <listeners>
+    <listener class-name="listeners.Listeners"/>
+  </listeners>
+  <test thread-count="4" parallel="classes" name="AllTests(failed)">
+    <classes>
+      <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest">
+        <methods>
+          <include name="playlistTest_deletePlaylists_playlistDeleted"/>
+          <include name="playlistTest_createPlayList_playlistCreated"/>
+          <include name="playlistTest_renamePlaylist_playlistRenamed"/>
+          <include name="songTest_addSongToFavorites_songAdded"/>
+          <include name="songTest_addSongToFavorites_songAdded1"/>
+          <include name="playlistTest_deletePlaylists_playlistDeleted1"/>
+          <include name="playlistTest_renamePlaylist_playlistRenamed1"/>
+          <include name="tearDown"/>
+          <include name="startUp"/>
+        </methods>
+      </class> <!-- lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest -->
+      <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest_A">
+        <methods>
+          <include name="loginTest_wrongCridentialsA"/>
+          <include name="loginTest_correctCredentials2A"/>
+          <include name="loginTest_correctCredentialsA"/>
+          <include name="tearDown"/>
+          <include name="loginTest_correctCredentials1A"/>
+          <include name="loginTest_wrongCridentials2A"/>
+          <include name="loginTest_wrongCridentials1A"/>
+          <include name="startUp"/>
+        </methods>
+      </class> <!-- lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest_A -->
+      <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest">
+        <methods>
+          <include name="loginTest_wrongCridentials1"/>
+          <include name="tearDown"/>
+          <include name="loginTest_correctCredentials2"/>
+          <include name="loginTest_wrongCridentials2"/>
+          <include name="startUp"/>
+          <include name="loginTest_correctCredentials1"/>
+        </methods>
+      </class> <!-- lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest -->
+      <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest_A">
+        <methods>
+          <include name="playlistTest_renamePlaylist_playlistRenamed1A"/>
+          <include name="playlistTest_deletePlaylists_playlistDeleted1A"/>
+          <include name="songTest_addSongToFavorites_songAddedA"/>
+          <include name="songTest_addSongToFavorites_songAdded1A"/>
+          <include name="playlistTest_createPlayList_playlistCreatedA"/>
+          <include name="tearDown"/>
+          <include name="playlistTest_deletePlaylists_playlistDeletedA"/>
+          <include name="playlistTest_renamePlaylist_playlistRenamedA"/>
+          <include name="startUp"/>
+        </methods>
+      </class> <!-- lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest_A -->
+    </classes>
+  </test> <!-- AllTests(failed) -->
+</suite> <!-- Failed suite [MasterSuite] -->
