@@ -2,15 +2,14 @@ package listeners;
 
 
 import lesson9_10_Selenium_PageObjects2_BasePage_Locators.MainPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.log4testng.Logger;
-
-import java.util.logging.LogManager;
 
 public class Listeners implements ITestListener {
-    private static Logger logger = Logger.getLogger(MainPage.class);
+    private static Logger logger = LogManager.getLogger(MainPage.class);
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -20,7 +19,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("++++++Hey we here +++ "+iTestResult.getName());
+        logger.debug("++++++Hey we here +++ "+iTestResult.getName());
     }
 
     @Override

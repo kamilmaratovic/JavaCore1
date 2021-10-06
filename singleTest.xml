@@ -7,11 +7,12 @@
     <parameter name="email" value="koeluser06@testpro.io"/>
     <parameter name="password" value="te$t$tudent"/>
     <parameter name="wrongPassword" value="te$t$tudent1"/>
+    <parameter name="browser" value="CHROME"></parameter>
 <test name="AllTests">
     <classes>
-        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.LoginTest">
+        <class name="lesson9_10_Selenium_PageObjectTests2_BaseTest.PlaylistTest">
             <methods>
-                <include name="loginTest_correctCredentials1"/>
+                <include name="playlistTest_renamePlaylist_playlistRenamed1"/>
             </methods>
         </class>
     </classes>

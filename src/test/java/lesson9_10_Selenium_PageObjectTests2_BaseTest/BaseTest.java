@@ -22,16 +22,17 @@ public class BaseTest {
    protected String wrongPassword;
    protected int error_count = 0;
    @Parameters
-           ({"email", "password", "wrongPassword"})
+           ({"email", "password", "wrongPassword", "browser"})
     @BeforeMethod
-    public void startUp(String email, String password, String wrongPassword) {
+    public void startUp(String email, String password, String wrongPassword, String browser) {
 //        this.username = "koeluser06@testpro.io";
 //        this.password = "te$t$tudent";
 //        this.wrongPassword = "te$t$tudent1";
        username = email;
        this.password = password;
        this.wrongPassword = wrongPassword;
-        BrowserType browserType = BrowserType.OPERA;
+//        BrowserType browserType = BrowserType.CHROME;
+       BrowserType browserType = browser.equals("CHROME")? BrowserType.CHROME : BrowserType.FIREFOX; //if else logic
         driver = BrowserFabric.getWebdriver(browserType);
 
         this.faker = new Faker();

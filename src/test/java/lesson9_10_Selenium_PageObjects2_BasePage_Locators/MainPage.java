@@ -1,5 +1,7 @@
 package lesson9_10_Selenium_PageObjects2_BasePage_Locators;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainPage extends BasePage{
+    private static Logger logger = LogManager.getLogger(MainPage.class);
     List<String> names1 = new ArrayList<>();
     List<String> names2 = new ArrayList<>();
     public MainPage(WebDriver driver) {
+
         super(driver);
     }
 
@@ -34,8 +38,10 @@ public class MainPage extends BasePage{
                 WebElement plusButton = driver.findElement(By.xpath("//*[contains(@class,'fa-plus-circle')]"));
                 actions.moveToElement(plusButton).perform();
                 actions.click(plusButton).perform();
+                logger.info("Plus button was clicked");
                 break;
             } catch (NoSuchElementException | ElementNotInteractableException | TimeoutException ignored) {
+                logger.error("We are in the catch block "+ignored.getLocalizedMessage());
             };
 
         }
@@ -54,19 +60,23 @@ public class MainPage extends BasePage{
         }
 //    }
 
-    public WebElement getPlaylistNameField() {
-        for (int r = 0; r < 40; r++) {
+    public void clickPlaylistNameField() {
+        Actions actions = new Actions(driver);
+        for (int r = 0; r < 10; r++) {
             try {
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@placeholder, 'to save')]")));
+//                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@placeholder, 'to save')]")));
+                actions.moveToElement(driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"))).build().perform();
+                actions.click(driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]")));
             } catch (TimeoutException | ElementNotInteractableException | NoSuchElementException ignored) {};
         }
-        return driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"));
+//        return driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"));
     }
 
     public String createPlaylist(String playlistName) {
         clickPlusButton();
         clickNewPlaylistField();
-        getPlaylistNameField().sendKeys(playlistName, Keys.ENTER);
+        clickPlaylistNameField();
+        (driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"))).sendKeys(playlistName, Keys.ENTER);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'success')]")));
         String url = driver.getCurrentUrl();
         String[] parts = url.split("/");

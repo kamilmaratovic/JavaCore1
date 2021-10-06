@@ -30,10 +30,11 @@ public class BrowserFabric {
     }
 
     private static WebDriver getOperaDriver() {
-//        OperaOptions options = new OperaOptions();
+        OperaOptions options = new OperaOptions();
 //        System.setProperty("webdriver.opera.driver", "operadriver");
         WebDriverManager.operadriver().setup(); //WebDriver manager is alternative solution
-        return new OperaDriver();
+        options.addArguments("--headless");
+        return new OperaDriver(options);
     }
 
     private static WebDriver getEdgeDriver() {
@@ -44,19 +45,19 @@ public class BrowserFabric {
 
     private static WebDriver getFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
-//        FirefoxOptions options = new FirefoxOptions();
+        FirefoxOptions options = new FirefoxOptions();
 //        options.addArguments("--width=1400");
 //        options.addArguments("--height=1000");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
 //        System.setProperty("webdriver.gecko.driver", "geckodriver");
-        return new FirefoxDriver();
+        return new FirefoxDriver(options);
     }
 
     private static WebDriver getChromeDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("window-size=1400,1000");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
 ////        System.setProperty("webdriver.chrome.driver", "chromedriver");
        return new ChromeDriver(options);
     }
