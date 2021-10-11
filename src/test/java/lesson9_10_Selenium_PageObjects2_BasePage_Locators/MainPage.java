@@ -91,6 +91,7 @@ public class MainPage extends BasePage{
     }
 
     public void renamePlaylist(String newPlaylistName, String playlistId) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/" + playlistId + "']")));
         Actions action = new Actions(driver);
         WebElement myPlaylist = driver.findElement(By.xpath("//*[@href='#!/playlist/" + playlistId + "']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", myPlaylist);
@@ -100,11 +101,15 @@ public class MainPage extends BasePage{
             try {
                 action.doubleClick(myPlaylist).perform();
                 wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[contains(@class, 'playlist editing')]/input"))));
-                action.doubleClick(driver.findElement(By.xpath("//*[contains(@class, 'playlist editing')]/input"))).perform();
-                action.sendKeys(newPlaylistName, Keys.ENTER).perform();
+                WebElement playlistEditing = driver.findElement(By.xpath("//*[contains(@class, 'playlist editing')]/input"));
+//                action.doubleClick(driver.findElement(By.xpath("//*[contains(@class, 'playlist editing')]/input"))).perform();
+//                action.sendKeys(newPlaylistName, Keys.ENTER).perform();
+                action.doubleClick(playlistEditing).click(playlistEditing).perform();
+                playlistEditing.sendKeys(newPlaylistName);
+                playlistEditing.sendKeys(Keys.ENTER);
 
                 break;
-            } catch (TimeoutException | ElementNotInteractableException ignored) {
+            } catch (TimeoutException | NoSuchElementException | ElementNotInteractableException ignored) {
             }
             ;
         }

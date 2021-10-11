@@ -1,8 +1,6 @@
-package models;
-
+package models_restAssured_APItesting;
 
 public class Pet {
-
     private long id;
     private String name;
     private String[] photoUrls;
@@ -10,12 +8,12 @@ public class Pet {
     private Category category;
     private Tag[] tags;
 
-    public Pet() {
-    }
-
     public Pet(String name, String[] photoUrls) {
         this.name = name;
         this.photoUrls = photoUrls;
+    }
+
+    public Pet() {
     }
 
     public void setId(long id) {

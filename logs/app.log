@@ -7276,3 +7276,23 @@ Session ID: f525972369f2f595ab4b41f01a08bb4b
 2021-09-06 20:59:13,637 WARN l.LoginPage [TestNG-test=AllTests-4] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
 2021-09-06 20:59:13,772 INFO l.MainPage [TestNG-test=AllTests-3] songTest_addSongToFavorites_songAdded1 Started
 2021-09-06 20:59:14,310 WARN l.LoginPage [TestNG-test=AllTests-3] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:18:22,111 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:19:26,671 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:20:33,689 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:27:02,901 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:33:47,645 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:36:47,126 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:39:15,803 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:45:41,703 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:47:42,299 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:50:53,864 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:53:33,592 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 19:57:16,303 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 20:08:13,895 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 20:10:13,122 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 20:11:32,625 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 20:13:06,387 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 22:03:09,172 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 22:07:51,180 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 22:13:31,057 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent
+2021-10-10 22:14:36,107 WARN l.LoginPage [main] Attempt to log in to app using koeluser06@testpro.io te$t$tudent

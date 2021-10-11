@@ -1,11 +1,9 @@
-package models;
+package models_restAssured_APItesting;
 
 public class Tag {
     private String name;
     private long id;
 
-    public Tag() {
-    }
 
     public Tag(long id, String name) {
         this.id = id;
