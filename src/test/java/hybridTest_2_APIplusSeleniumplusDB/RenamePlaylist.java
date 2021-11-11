@@ -1,4 +1,4 @@
-package hybridTest_1_APIplusSelenium;
+package hybridTest_2_APIplusSeleniumplusDB;
 
 import com.github.javafaker.Faker;
 import io.restassured.path.json.JsonPath;
@@ -15,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import z_helpers.DbAdapter;
 
 import static io.restassured.RestAssured.given;
 
@@ -68,39 +69,17 @@ public class RenamePlaylist {
                 .extract()
                 .response();
     }
-        @Test
-        public void renamePlaylist() throws InterruptedException {
-            String newPlaylistName = faker.artist().name();
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.open();
-            var mainPage = loginPage.login("koeluser06@testpro.io", "te$t$tudent");
+    @Test
+    public void renamePlaylist() throws InterruptedException {
+        String newPlaylistName = faker.artist().name();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        var mainPage = loginPage.login("koeluser06@testpro.io", "te$t$tudent");
 //            Thread.sleep(5000);
-            mainPage.renamePlaylist(newPlaylistName, playlistId+"");
+        mainPage.renamePlaylist(newPlaylistName, playlistId+"");
+        var playlist = DbAdapter.getPlaylistById1(playlistId);
+        Assert.assertNotNull(playlist);
+        Assert.assertEquals(newPlaylistName, playlist.getName());
 
-            Response response =
-                    given()
-                            .baseUri("https://bbb.testpro.io/")
-                            .basePath("api/playlist")
-                            .header("Content-Type","application/json")
-                            .header("Accept", "application/json")
-                            .header("Authorization", token)
-                            .when()
-                            .get()
-                            .then()
-                            .statusCode(200)
-                            .extract()
-                            .response();
-            JsonPath jsonPath = response.jsonPath();
-            CreatePlaylistResponse[] createPlaylistsResponse = jsonPath.getObject("$", CreatePlaylistResponse[].class);
-            boolean found = false;
-            for(CreatePlaylistResponse playlist : createPlaylistsResponse){
-                if(playlist.getId() == playlistId){
-                    Assert.assertEquals(playlist.getName(), newPlaylistName);
-                    found = true;
-                    break;
-                }
-            }
-            Assert.assertTrue(found);
-        }
     }
-
+}

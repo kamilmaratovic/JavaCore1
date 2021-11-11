@@ -1,4 +1,4 @@
-package models_restAssured_APItesting;
+package models_restAssured_APItesting_DB;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

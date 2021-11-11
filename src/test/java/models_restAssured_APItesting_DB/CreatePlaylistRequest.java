@@ -1,4 +1,4 @@
-package models_restAssured_APItesting;
+package models_restAssured_APItesting_DB;
 
 public class CreatePlaylistRequest {
     private String name;

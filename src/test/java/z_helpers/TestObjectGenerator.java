@@ -1,9 +1,9 @@
 package z_helpers;
 
 import com.github.javafaker.Faker;
-import models_restAssured_APItesting.Category;
-import models_restAssured_APItesting.Pet;
-import models_restAssured_APItesting.Status;
+import models_restAssured_APItesting_DB.Category;
+import models_restAssured_APItesting_DB.Pet;
+import models_restAssured_APItesting_DB.Status;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Random;
