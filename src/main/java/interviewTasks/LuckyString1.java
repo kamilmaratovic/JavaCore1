@@ -2,7 +2,7 @@ package interviewTasks;
 
 public class LuckyString1 {
     public static void main(String[] args) {
-        String str = "booomooob1";
+        String str = "booomooob";
         if (isLucky(str)){
             System.out.println(str + " is Lucky");
         } else{

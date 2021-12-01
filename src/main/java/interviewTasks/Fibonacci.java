@@ -6,6 +6,20 @@ public class Fibonacci {
             int N = 10;
 //            Fibonacci1(N);
             Fibonacci2(N);
+
+            int n1 = 0;
+            int n2 = 1;
+            int sum = 0;
+
+            System.out.print(n1+" "+n2);//0 1
+
+            for (int i =2; i<10; i++){
+                sum = n1+n2; //1 2 3 5 8 13
+                System.out.print(" "+sum); //1 2 3 5 8 13
+                n1=n2; //8
+                n2=sum; //13
+
+            }
         }
 
        public static void Fibonacci1(int N) {

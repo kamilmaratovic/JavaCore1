@@ -1,6 +1,7 @@
 package interviewTasks;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Anagramm {
     public static void main(String[] args) {
@@ -30,6 +31,7 @@ public class Anagramm {
             }
             return true;
         }
-        return false;
+        return true;
     }
+
 }
