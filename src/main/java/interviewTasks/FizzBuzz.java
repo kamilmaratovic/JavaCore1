@@ -8,9 +8,10 @@ public class FizzBuzz {
 //            fizzbuzz1(i);
 //        }
 
-        for (int j = 1; j<=100; j++){
-            fizzBuzz(j);
-        }
+//        for (int j = 1; j<=100; j++){
+//            fizzBuzz(j);
+//        }
+        FizzBuzz();
     }
 
     private static void fizzbuzz1(int i) {
@@ -52,5 +53,24 @@ public class FizzBuzz {
             System.out.print("Buzz ");
         }
         System.out.println(j);
+    }
+
+    public static void FizzBuzz (){
+        for (int i= 1; i<=100; i++){
+            if(i%3==0 && i%5==0){
+                System.out.println(i+" FIZZBUZZ");
+                continue;
+            }
+            if (i%3==0){
+                System.out.println(i+" FIZZ");
+                continue;
+            }
+            if (i%5==0){
+                System.out.println(i+" BUZZ");
+                continue;
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }

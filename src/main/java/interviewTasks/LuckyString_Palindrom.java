@@ -15,6 +15,28 @@ public class LuckyString_Palindrom {
         } else{
         System.out.println(str1+" isnt lucky");}
 
+
+        String str2= "ertyytre1";
+        if (isPalindrom(str2)){
+            System.out.println("This is palindrom " +str2);
+        } else {
+            System.out.println("This is nothing "+str2);
+        }
+
+    }
+
+    private static boolean isPalindrom(String str2) {
+        String reverse = "";
+        for (int i=str2.length()-1;i>=0; i--){
+            reverse = reverse+str2.charAt(i);
+        }
+        for (int i =0; i<str2.length(); i++){
+            if(str2.charAt(i)!=reverse.charAt(i)){
+    return false;
+            }
+            return true;
+        }
+        return true;
     }
 
     private static boolean isLucky(String str) {

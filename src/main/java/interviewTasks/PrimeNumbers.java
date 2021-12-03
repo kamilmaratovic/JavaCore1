@@ -3,7 +3,9 @@ package interviewTasks;
 public class PrimeNumbers {
     public static void main(String[] args) {
 //        printPrime(100);
-        printPrime1(100);
+//        printPrime1(100);
+        printPrime2(100);
+
     }
 
     private static void printPrime(int bound) {
@@ -36,6 +38,22 @@ public class PrimeNumbers {
     private static void printPrime1 (int bound){
         for (int i = 2; i<bound; i++){
             if(isPrime1(i)){
+                System.out.println(i);
+            }
+        }
+    }
+
+    private static boolean isPrime2(int number){
+        for (int i = 2; i<number;i++){
+            if (number%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    private static void printPrime2(int bound){
+        for(int i = 2; i<bound;i++){
+            if(isPrime2(i)){
                 System.out.println(i);
             }
         }

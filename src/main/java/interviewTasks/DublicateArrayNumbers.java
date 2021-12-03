@@ -7,6 +7,8 @@ public class DublicateArrayNumbers {
     public static void main(String[] args) {
         int[] arr = {1, 2, 5, 3, 4, 4, 6, 7, 1, 7};
 
+        int [] arr1 = {2, 4, 6, 2, 1, 5, 7, 12, 6, 9, 9};
+
         Set<Integer> set = new HashSet<>();
         for (int v : arr) {
             if (!set.add(v)) {
@@ -21,6 +23,14 @@ public class DublicateArrayNumbers {
                 }
             }
 
+        }
+
+        for (int i = 0; i<arr1.length; i++){
+            for (int j=i+1; j<arr1.length; j++){
+                if (arr1[i]==arr1[j]){
+                    System.out.print("\n"+arr1[j]);
+                }
+            }
         }
     }}
 

@@ -5,10 +5,14 @@ public class ReverseSentence {
 //        final String sentence = "Today is a good day";
 //        reverseSentence(sentence);
 //        reverse1("Fuck off");
-        reverseWord("Kamil");
+//        reverseWord("Kamil");
+
+//        System.out.println(reverseString("Kamil"));
 //        System.out.println(reverseString("Kamil"));
 //
 //        System.out.println(StringFormatter.reverseString("Kamil"));
+        reverseName("Kamzikus");
+        reverseName1("Kamil");
     }
 
     private static void reverseSentence(String sentence) {
@@ -52,6 +56,21 @@ public class ReverseSentence {
             reverse+=letters[i];
         }
         System.out.println(reverse);
+    }
+
+    public static void reverseName (String name){
+        char[] letters = name.toCharArray();
+        String reverse = "";
+        for (int i = letters.length-1; i>=0; i--){
+            reverse+=letters[i];
+        }
+        System.out.println(reverse);
+    }
+
+    public static void reverseName1(String name){
+        StringBuilder builder = new StringBuilder(name);
+        System.out.println(builder.reverse());
+
     }
 
 }

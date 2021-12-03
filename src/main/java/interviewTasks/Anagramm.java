@@ -8,8 +8,33 @@ public class Anagramm {
         String str1 = "Thing";
         String str2 = "Night";
 
+        String string1 = "Roll1";
+        String string2 = "Ollr1";
+
+        boolean checkIt = isAnnagramm1 (string1, string2);
+        System.out.println(checkIt);
+
         boolean check = isAnagram(str1, str2);
         System.out.println(check);
+    }
+
+    private static boolean isAnnagramm1(String string1, String string2) {
+        String normal1 = string1.toLowerCase();
+        String normal2 = string2.toLowerCase();
+
+        char[] word1 = normal1.toCharArray();
+        char[] word2 = normal2.toCharArray();
+
+        Arrays.sort(word1);
+        Arrays.sort(word2);
+
+        for (int i=0; i<word1.length; i++){
+            if (word1[i]!=word2[i]){
+                return false;
+            }
+            return true;
+        }
+        return true;
     }
 
     private static boolean isAnagram(String str1, String str2) {

@@ -14,5 +14,12 @@ public class RandomNumber {
         String a = LocalTime.now().getNano()+"";
         a.substring(8);
         System.out.println(a);
+
+        Date y = new Date();
+        String random = y.getTime()+"";
+        System.out.println(random.substring(8));
     }
+
+
+
 }
