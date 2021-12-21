@@ -12,12 +12,11 @@ public class RandomNumber {
         System.out.println(rand.substring(7));
 
         String a = LocalTime.now().getNano()+"";
-        a.substring(8);
-        System.out.println(a);
+        System.out.println(a.substring(1,7));
 
-        Date y = new Date();
-        String random = y.getTime()+"";
-        System.out.println(random.substring(8));
+       Date date = new Date();
+       String randomN = date.getTime()+"";
+       System.out.println(randomN.substring(8));
     }
 
 

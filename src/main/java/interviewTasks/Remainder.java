@@ -6,10 +6,21 @@ public class Remainder {
         int rem = getRemainder (16, 5);
         int rem1 = getRemainder1 (20, 6);
         int rem2 = getReminder2(40, 6);
+        int rem3 = getReminder3 (50, 8);
         System.out.println(rem);
         System.out.println(rem1);
-
         System.out.println(rem2);
+        System.out.println(rem3);
+
+    }
+
+    private static int getReminder3(int a, int b) {
+        while (a>b){
+            a=a-b;
+        } if (a==b){
+            return 0;
+        }
+        return a;
     }
 
     private static int getReminder2(int a, int b) {

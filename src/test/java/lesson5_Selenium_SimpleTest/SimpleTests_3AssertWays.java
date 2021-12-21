@@ -1,5 +1,6 @@
 package lesson5_Selenium_SimpleTest;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -11,7 +12,9 @@ public class SimpleTests_3AssertWays {
     @Test
 
     public void loginTest_correctCredentials_loggedToApp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "chromedriver");
+//        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://bbb.testpro.io/");
         Thread.sleep(1000);
@@ -51,7 +54,8 @@ public class SimpleTests_3AssertWays {
 
     @Test
     public void loginTest_wrongCredentials_errorFrame() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://bbb.testpro.io/");
         Thread.sleep(1000);
@@ -75,7 +79,8 @@ public class SimpleTests_3AssertWays {
     }
 
     @Test public void loginTest_wrongCredentials_errorFrame1() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://bbb.testpro.io/");
         Thread.sleep(1000);

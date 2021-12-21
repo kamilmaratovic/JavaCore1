@@ -23,7 +23,38 @@ public class LuckyString_Palindrom {
             System.out.println("This is nothing "+str2);
         }
 
+        String string = "qwe11ewq";
+        if (isPalindrom2(string)){
+            System.out.println(string+" is a palindrom");
+        } else {
+            System.out.println("This is not a palindrom");
+        }
+        isPalindrom2(string);
+
+        String string1 = "1qwe1ewq";
+        if (isPalindrom3(string1)){
+            System.out.println(string1+" is a palindrom");
+        } else {
+            System.out.println(string1+ " is not a palindrom");
+        }
+
     }
+
+    private static boolean isPalindrom2(String string) {
+        String reverse = "";
+        for (int i = string.length() - 1; i >= 0; i--) {
+            reverse += string.charAt(i);
+        }
+        for (int i = 0; i < string.length(); i++) {
+            if (reverse.charAt(i) != string.charAt(i)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return true;
+    }
+
 
     private static boolean isPalindrom(String str2) {
         String reverse = "";
@@ -63,5 +94,13 @@ public class LuckyString_Palindrom {
             }
         }
         return true;
+    }
+
+    private static boolean isPalindrom3(String string){
+        StringBuilder builder = new StringBuilder(string);
+        String reverse = builder.reverse().toString();
+        if (string.equals(reverse)){
+            return true;
+        } else{ return false;}
     }
 }

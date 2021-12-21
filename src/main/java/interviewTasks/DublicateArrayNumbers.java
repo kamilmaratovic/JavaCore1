@@ -9,6 +9,8 @@ public class DublicateArrayNumbers {
 
         int [] arr1 = {2, 4, 6, 2, 1, 5, 7, 12, 6, 9, 9};
 
+        int [] arr2 = {2,4,1,2,1,6,9,4,8,12,9};
+
         Set<Integer> set = new HashSet<>();
         for (int v : arr) {
             if (!set.add(v)) {
@@ -29,6 +31,14 @@ public class DublicateArrayNumbers {
             for (int j=i+1; j<arr1.length; j++){
                 if (arr1[i]==arr1[j]){
                     System.out.print("\n"+arr1[j]);
+                }
+            }
+        }
+
+        for (int i = 0; i<arr2.length; i++){
+            for (int j=i+1; j<arr2.length; j++){
+                if(arr2[i]==arr2[j]){
+                    System.out.print("Number "+ arr2[j]+" ");
                 }
             }
         }

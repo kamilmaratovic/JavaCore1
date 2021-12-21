@@ -21,5 +21,15 @@ public class Swap2Variables {
 
         System.out.println(x);
         System.out.println(y);
+
+        int z = 50;
+        int v = 15;
+
+        z=z+v;
+        v = z-v;
+        z = z-v;
+
+        System.out.println(z);
+        System.out.println(v);
     }
 }

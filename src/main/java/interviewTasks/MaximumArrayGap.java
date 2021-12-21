@@ -1,5 +1,6 @@
 package interviewTasks;
 
+import java.math.MathContext;
 import java.util.Arrays;
 
 public class MaximumArrayGap {
@@ -13,7 +14,26 @@ public class MaximumArrayGap {
         int[] arr = {2,7,19,4, 12, 1, 65, 24, 80};
         Arrays.sort(arr);
         System.out.println(maxGap2(arr, arr.length-1));
+
+        int [] arr2 = {4, 12, 8, 41, 27, 19, 56, 20, 62};
+        Arrays.sort(arr2);
+        System.out.println(Arrays.toString(arr2));
+//        System.out.println("Max gap is "+maxGap3(arr2, arr2.length-1));
+maxGap3(arr2, arr2.length-1);
     }
+
+    private static Integer maxGap3(int[] arr2, int arr_size) {
+        Integer max_gap = arr2[1]-arr2[0];
+        for (int i = 0; i<arr_size; i++){
+            if (arr2[i+1]-arr2[i]>max_gap) {
+                max_gap=arr2[i+1]-arr2[i];
+                System.out.println("Max gap for "+arr2[i]+ " and "+arr2[i+1]+" is "+max_gap);
+                }
+            }
+
+        return max_gap;
+        }
+
 
 
     public static int maxGap2 (int[] arr,int arr_size){

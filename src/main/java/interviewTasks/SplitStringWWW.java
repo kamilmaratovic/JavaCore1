@@ -7,7 +7,15 @@ public class SplitStringWWW {
         String params = spl[1];
         String[] pr = params.split("&");
         for (String v: pr){
-            System.out.println(v.split("=")[0]+": "+v.split("=")[1]);
+//            System.out.println(v.split("=")[0]+": "+v.split("=")[1]);
         }
+
+        String [] split = xx.split("\\?");
+        String yy = split[1];
+        String[] vv = yy.split("&");
+        for (String v: vv){
+            System.out.println(v.split("=")[0]+" : "+v.split("=")[1]);
+        }
+
     }
 }

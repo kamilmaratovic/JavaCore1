@@ -4,8 +4,26 @@ public class PrimeNumbers {
     public static void main(String[] args) {
 //        printPrime(100);
 //        printPrime1(100);
-        printPrime2(100);
+//        printPrime2(100);
+        printPrime3(100);
 
+    }
+
+    private static void printPrime3(int bound) {
+        for (int i=2; i<=bound; i++){
+            if(isPrime3(i)){
+                System.out.println(i);
+            }
+        }
+    }
+
+    private static boolean isPrime3(int number) {
+        for (int i=2; i<number;i++){
+            if(number%i==0){
+                return false;
+            }
+        }
+        return true;
     }
 
     private static void printPrime(int bound) {

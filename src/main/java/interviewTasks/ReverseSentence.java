@@ -11,8 +11,10 @@ public class ReverseSentence {
 //        System.out.println(reverseString("Kamil"));
 //
 //        System.out.println(StringFormatter.reverseString("Kamil"));
-        reverseName("Kamzikus");
-        reverseName1("Kamil");
+//        reverseName("Kamzikus");
+        reverseName1("Kamil Kamil Kamil");
+//        reverseWord1("Kamil Kamil Kamilka");
+
     }
 
     private static void reverseSentence(String sentence) {
@@ -72,6 +74,16 @@ public class ReverseSentence {
         System.out.println(builder.reverse());
 
     }
+
+    public static void reverseWord1(String word){
+        String reverse = "";
+        for (int i=word.length()-1; i>=0; i--){
+            reverse+=word.charAt(i);
+        }
+        System.out.println(reverse);
+    }
+
+
 
 }
 
