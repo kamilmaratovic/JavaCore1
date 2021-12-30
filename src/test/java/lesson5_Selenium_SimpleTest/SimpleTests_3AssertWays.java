@@ -14,7 +14,7 @@ public class SimpleTests_3AssertWays {
     public void loginTest_correctCredentials_loggedToApp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 //        WebDriver driver = new ChromeDriver();
-//        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://bbb.testpro.io/");
         Thread.sleep(1000);
