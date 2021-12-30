@@ -11,7 +11,7 @@ import java.util.List;
 public class SimpleTests_3AssertWays {
     @Test
 
-    private void loginTest_correctCredentials_loggedToApp() throws InterruptedException {
+    public void loginTest_correctCredentials_loggedToApp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 //        WebDriver driver = new ChromeDriver();
         WebDriverManager.chromedriver().setup();
