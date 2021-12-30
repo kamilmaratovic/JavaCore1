@@ -12,7 +12,7 @@ public class SimpleTests_3AssertWays {
     @Test
 
     public void loginTest_correctCredentials_loggedToApp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "chromedriver");
 //        WebDriver driver = new ChromeDriver();
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -29,13 +29,13 @@ public class SimpleTests_3AssertWays {
 
      //   1 way to asserte test
 
-        boolean logged = false;
+        boolean logged1 = false;
         try{
             driver.findElement(By.className("home"));
-            logged = true;
+            logged1 = true;
         } catch (NoSuchElementException ignored){}
 
-        Assert.assertTrue(logged);
+        Assert.assertTrue(logged1);
 
         //2 way to assert test
 
