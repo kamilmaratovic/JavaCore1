@@ -29,10 +29,10 @@ public class SimpleTests_3AssertWays {
 
      //   1 way to asserte test
 
-        boolean logged1 = false;
+        boolean logged1 = true;
         try{
             driver.findElement(By.className("home"));
-            logged1 = true;
+            logged1 = false;
         } catch (NoSuchElementException ignored){}
 
         Assert.assertTrue(logged1);
