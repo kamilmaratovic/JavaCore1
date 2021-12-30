@@ -25,7 +25,7 @@ public class SimpleTests_3AssertWays {
         passwordField.sendKeys("te$t$tudent");
         WebElement loginButton = driver.findElement(By.cssSelector("button"));
         loginButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
      //   1 way to asserte test
 
