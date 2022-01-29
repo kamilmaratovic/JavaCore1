@@ -25,17 +25,17 @@ public class SimpleTests_3AssertWays {
         passwordField.sendKeys("te$t$tudent");
         WebElement loginButton = driver.findElement(By.cssSelector("button"));
         loginButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
      //   1 way to asserte test
 
-        boolean logged = false;
+        boolean logged1 = true;
         try{
             driver.findElement(By.className("home"));
-            logged = true;
+            logged1 = false;
         } catch (NoSuchElementException ignored){}
 
-        Assert.assertTrue(logged);
+        Assert.assertTrue(logged1);
 
         //2 way to assert test
 

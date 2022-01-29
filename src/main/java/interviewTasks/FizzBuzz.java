@@ -12,7 +12,9 @@ public class FizzBuzz {
 //            fizzBuzz(j);
 //        }
 //        FizzBuzz();
-        FIZZBUZZ1();
+//        FIZZBUZZ1();
+
+        fizzbuzz1(100);
     }
 
 
@@ -48,10 +50,10 @@ public class FizzBuzz {
         if (j%3==0 && j%5==0){
             System.out.print("FizzBuzz ");
         }
-        if ((j%3==0)){
+        if (j%3==0){
             System.out.print("Fizz ");
         }
-        if ((j%5==0)){
+        if (j%5==0){
             System.out.print("Buzz ");
         }
         System.out.println(j);

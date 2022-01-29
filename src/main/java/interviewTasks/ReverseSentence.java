@@ -47,8 +47,10 @@ public class ReverseSentence {
         String reverse = "";
         for (int i = words1.length-1; i>=0; i--){
             reverse+=words1[i]+" ";
-            System.out.println(reverse);
+
         }
+        reverse = reverse.trim();
+        System.out.println(reverse);
     }
 
     public static void reverseWord (String word){
@@ -82,6 +84,8 @@ public class ReverseSentence {
         }
         System.out.println(reverse);
     }
+
+
 
 
 
